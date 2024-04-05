@@ -81,17 +81,17 @@ console.log(getLastTableValue(tableNameScd));
 console.log("4/ Implémentez une fonction qui retourne la valeur en entrée augmentée d'un pourcentage d'augmentation.");
 
 /**
- * Get the increase of a by using a percentage of 25%.
- * @param {number} a The value that will be increased.
- * @returns {number} The result = a increased of 25%.
+ * increases a value with a percentage without %
+ * @param {number} a arbitrary value to increase.
+ * @param {number} percent percentage without % (ex : 1, 2, 3)
+ * @returns {number} value "a" increased.
  */
-function getIncreasePercent(a) {
-    const tax = 1.25;
-    return a * tax
+function increaseValuePercent(a, percent) {
+    return a * (1 + percent / 100);
 }
 
-console.log(getIncreasePercent(47));
-console.log(getIncreasePercent(82));
+console.log(increaseValuePercent(50, 25));
+console.log(increaseValuePercent(97, 50));
 
 
 /* ------------------------------------------------------*/
@@ -115,13 +115,14 @@ console.log(getMaxValue(5221, 58, 165164));
 console.log("6/ Implémentez une fonction qui retourne la somme des valeurs d'un tableau.");
 
 const numArray = [15, 58, 96, 14, 5, 477, 22]
+const numArray2 = [155, 758, 966, 414, 245, 4177, 22]
 
 let sumArray = 0;
 
 /**
  * Get the sum of all the values of an array.
  * @param {array} array Name the array you want the sum of.
- * @returns {number} Total sum of zall the vazlues of your array.
+ * @returns {number} Total sum of all the values of your array.
  */
 function getSumArray(array) {
     for (const number of numArray) {
@@ -131,7 +132,7 @@ function getSumArray(array) {
 }
 
 console.log(getSumArray(numArray));
-console.log();
+console.log(getSumArray(numArray2));
 
 
 /* ------------------------------------------------------*/
@@ -146,7 +147,7 @@ let floorValue = 0;
  * @returns {number} The random number.
  */
 function getRandomValue(a) {
-    return Math.floor(Math.random(1) * a)
+    return Math.floor(Math.random(0) * a + 1)
 }
 
 console.log(getRandomValue(5));
@@ -157,21 +158,41 @@ console.log(getRandomValue(100));
 
 console.log("8/ Implémentez une fonction qui retourne la moyenne des valeurs d'un tableau.");
 
-console.log();
-console.log();
+const numbersArray = [46, 88, 74, 22, 35, 65]
+const numbersArray2 = [10, 20]
+
+let averageArray = 0;
+
+function getAverageValuesArray(array) {
+    for (const nbr of array) {
+        averageArray += nbr;
+    }
+    return averageArray / array.length
+}
+
+console.log(getAverageValuesArray(numbersArray));
+console.log(getAverageValuesArray(numbersArray2));
 
 
 /* ------------------------------------------------------*/
 
 console.log("9/ Implémentez une fonction qui retourne une durée en heures et minutes depuis une durée en minutes.");
 
-console.log();
-console.log();
+function getTimeConvert(time) {
+    let minute = Math.ceil(time % 60);
+    let hour = Math.floor(time/60);
+    return `${hour} heures et ${minute} minutes.` 
+}
+
+console.log(getTimeConvert(121));
+console.log(getTimeConvert(778));
 
 
 /* ------------------------------------------------------*/
 
 console.log("10/ Implémentez une fonction qui retourne la valeur minimale d'un tableau.");
+
+let numTable = [75, 95, 88, 47, 14, 12, 1, 58];
 
 console.log();
 console.log();
