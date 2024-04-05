@@ -69,7 +69,7 @@ const tableNameScd = [
  */
 function getLastTableValue(array) {
     const i = array.length;
-    return array[i-1]
+    return array[i - 1]
 }
 
 console.log(getLastTableValue(tableName));
@@ -82,8 +82,8 @@ console.log("4/ Implémentez une fonction qui retourne la valeur en entrée augm
 
 /**
  * Get the increase of a by using a percentage of 25%.
- * @param {number} a 
- * @returns 
+ * @param {number} a The value that will be increased.
+ * @returns {number} The result = a increased of 25%.
  */
 function getIncreasePercent(a) {
     const tax = 1.25;
@@ -98,15 +98,39 @@ console.log(getIncreasePercent(82));
 
 console.log("5/ Implémentez une fonction qui retourne la valeur maximale entre 3 valeurs.");
 
-console.log();
-console.log();
+function getMaxValue(a, b, c) {
+    return Math.max(a, b, c)
+}
+
+function getMaxValue(a, b, c) {
+    return Math.max(a, b, c)
+}
+
+console.log(getMaxValue(25, 32, 1));
+console.log(getMaxValue(5221, 58, 165164));
 
 
 /* ------------------------------------------------------*/
 
 console.log("6/ Implémentez une fonction qui retourne la somme des valeurs d'un tableau.");
 
-console.log();
+const numArray = [15, 58, 96, 14, 5, 477, 22]
+
+let sumArray = 0;
+
+/**
+ * Get the sum of all the values of an array.
+ * @param {array} array Name the array you want the sum of.
+ * @returns {number} Total sum of zall the vazlues of your array.
+ */
+function getSumArray(array) {
+    for (const number of numArray) {
+        sumArray += number;
+    }
+    return sumArray
+}
+
+console.log(getSumArray(numArray));
 console.log();
 
 
