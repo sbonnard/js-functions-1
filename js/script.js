@@ -138,8 +138,19 @@ console.log();
 
 console.log("7/ Implémentez une fonction qui retourne une valeur aléatoire entre 0 et un nombre.");
 
-console.log();
-console.log();
+let floorValue = 0;
+
+/**
+ * Get random number between 0 and the param value.
+ * @param {number} a The max number to reach
+ * @returns {number} The random number.
+ */
+function getRandomValue(a) {
+    return Math.floor(Math.random(1) * a)
+}
+
+console.log(getRandomValue(5));
+console.log(getRandomValue(100));
 
 
 /* ------------------------------------------------------*/
