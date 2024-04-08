@@ -200,8 +200,8 @@ console.log("9/ Implémentez une fonction qui retourne une durée en heures et m
 
 /**
  * Converts time in minutes in hours and minutes.
- * @param {time} time Time in minutes
- * @returns time in hours and minutes
+ * @param {number} time Time in minutes
+ * @returns {string} time in hours and minutes
  */
 function convertTime(time) {
     let minute = Math.ceil(time % 60);
@@ -221,7 +221,7 @@ let numTable = [75, 95, 88, 47, 14, 12, 1, 58];
 let numTable2 = [75, 95, 88, 2, 14, 12, 100, 58];
 
 /**
- * Get lowest value out of an array.
+ * Get lowest value from an array.
  * @param {array} array The array you want the lowest value of.
  * @returns {number} The lowest value in your array.
  */
@@ -238,23 +238,41 @@ console.log(getMinTableValue((numTable2)));
 
 console.log("11/ Implémentez une fonction qui retourne la clé d'un objet pour la valeur maximale .");
 
-const scores =
-{
-    Nicolas: 629,
-    Samir: 857,
-    Tom: 483,
-    Loanne: 567
+console.log("11/ Implémentez une fonction qui retourne la clé d'un objet pour la valeur maximale .");
+
+/**
+ * Get object key with highest value
+ * @param {object} object 
+ * @returns {string} key with highest value
+ */
+function getMaxKey(object) {
+    const max = Math.max(...Object.values(object));
+    for (const key in object) {
+        if (max === object[key]) {
+            return key;
+        }
+    }
 }
-    ;
 
-let bestscore;
-
-function getKeyForMaxValue(object) {
-
+function getMaxKey2(object) {
+    let maxKey;
+    for (const key in object) {
+        if (maxKey === undefined || object[key] > object[maxKey]) {
+            maxKey = key;
+        }
+    }
+    return maxKey;
 }
 
-console.log(getKeyForMaxValue(scores));
-console.log();
+
+// function getMaxKey3(object) {
+//     return Object.keys(object).filter(v => object[v] === Math.max(...Object.values(object)));
+// }
+
+const objectValues = { Pierrette: 23, Lucie: 63, Mireille: 56 , Huguette: 63 };
+console.log(getMaxKey(objectValues));
+console.log(getMaxKey2(objectValues));
+// console.log(getMaxKey3(objectValues));
 
 
 /* ------------------------------------------------------*/
@@ -270,22 +288,30 @@ function getRandomValueArray(array) {
     return array[Math.floor(Math.random() * (array.length))]
 }
 
-// function getRandomValueArray(array){
-// a = array.length;
-// return getRandomValue(a)
-// }
-
 console.log(getRandomValueArray(numTable));
-console.log(getRandomValueArray(numTable2));
+
+/* ----------------------- OR ------------------------ */
+
+/**
+ * Get a random value from an array using its indexes.
+ * @param {array} array The array you want a random value from.
+ * @returns {number} The random value.
+ */
+function getRandomValueArray2(array){
+return array[getRandomValue(array.length-1)]
+}
+
+console.log(getRandomValueArray2(numTable2));
 
 
 /* ------------------------------------------------------*/
 
 console.log("13/ Implémentez une fonction qui retourne le nombre de mots dans un texte.");
 
-function name(params) {
-    
+function getWordLength(text) {
+    return text.split(' ').length;
 }
 
-console.log();
-console.log();
+console.log(getWordLength("Les chaussettes de l'Archiduchesse sont sèches ?"));
+console.log(getWordLength('Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptate inventore, ipsa sequi maiores modi eos sint esse dignissimos sit nihil soluta voluptates repellat a alias aliquid possimus dolores cupiditate.'));
+
