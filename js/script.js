@@ -220,6 +220,11 @@ console.log("10/ Implémentez une fonction qui retourne la valeur minimale d'un 
 let numTable = [75, 95, 88, 47, 14, 12, 1, 58];
 let numTable2 = [75, 95, 88, 2, 14, 12, 100, 58];
 
+/**
+ * Get lowest value out of an array.
+ * @param {array} array The array you want the lowest value of.
+ * @returns {number} The lowest value in your array.
+ */
 function getMinTableValue(array) {
     return Math.min(...array)
     }
@@ -244,16 +249,17 @@ const scores =
 
 let bestscore;
 
-function getMaxValueKey(object) {
+function getKeyForMaxValue(object) {
     // for (const v in object) {
     //     if (bestscore === undefined || Object.values(k) > bestscore) {
     //         k = bestscore
     //     };
     // }
     // return Object.keys(k)
+
 }
 
-console.log(getMaxValueKey(scores));
+console.log(getKeyForMaxValue(scores));
 console.log();
 
 
