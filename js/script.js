@@ -147,11 +147,21 @@ let floorValue = 0;
  * @returns {number} The random number.
  */
 function getRandomValue(a) {
-    return Math.floor(Math.random(0) * a + 1)
+    return Math.floor(Math.random(0) * (a + 1))
 }
+
 
 console.log(getRandomValue(5));
 console.log(getRandomValue(100));
+
+
+//Dé de JDR
+function rollRPGDice(a) {
+    return Math.floor(Math.random(0) * a + 1)
+}
+console.log(rollRPGDice(100));
+
+
 
 
 /* ------------------------------------------------------*/
@@ -161,14 +171,24 @@ console.log("8/ Implémentez une fonction qui retourne la moyenne des valeurs d'
 const numbersArray = [46, 88, 74, 22, 35, 65]
 const numbersArray2 = [10, 20]
 
-let averageArray = 0;
-
+/**
+ * get average of an array composed 
+ * @param {array} array 
+ * @returns {number}
+ */
 function getAverageValuesArray(array) {
+    let averageArray = 0;
     for (const nbr of array) {
         averageArray += nbr;
     }
     return averageArray / array.length
 }
+
+//-----OU------ Ne marche pas avec mes fonctions
+
+// function getAverageValuesArray2(array) {
+//     return getSumArray(array) / array.length
+// }
 
 console.log(getAverageValuesArray(numbersArray));
 console.log(getAverageValuesArray(numbersArray2));
@@ -178,14 +198,19 @@ console.log(getAverageValuesArray(numbersArray2));
 
 console.log("9/ Implémentez une fonction qui retourne une durée en heures et minutes depuis une durée en minutes.");
 
-function getTimeConvert(time) {
+/**
+ * Converts time in minutes in hours and minutes.
+ * @param {time} time Time in minutes
+ * @returns time in hours and minutes
+ */
+function convertTime(time) {
     let minute = Math.ceil(time % 60);
     let hour = Math.floor(time/60);
     return `${hour} heures et ${minute} minutes.` 
 }
 
-console.log(getTimeConvert(121));
-console.log(getTimeConvert(778));
+console.log(convertTime(121));
+console.log(convertTime(778));
 
 
 /* ------------------------------------------------------*/
@@ -193,16 +218,42 @@ console.log(getTimeConvert(778));
 console.log("10/ Implémentez une fonction qui retourne la valeur minimale d'un tableau.");
 
 let numTable = [75, 95, 88, 47, 14, 12, 1, 58];
+let numTable2 = [75, 95, 88, 2, 14, 12, 100, 58];
 
-console.log();
-console.log();
+function getMinTableValue(array) {
+    return Math.min(...array)
+    }
+
+
+console.log(getMinTableValue((numTable)));
+console.log(getMinTableValue((numTable2)));
 
 
 /* ------------------------------------------------------*/
 
 console.log("11/ Implémentez une fonction qui retourne la clé d'un objet pour la valeur maximale .");
 
-console.log();
+const scores = 
+    {
+        Nicolas: 629,
+        Samir: 857,
+        Tom: 483,
+        Loanne: 567
+    }
+;
+
+let bestscore;
+
+function getMaxValueKey(object) {
+    // for (const v in object) {
+    //     if (bestscore === undefined || Object.values(k) > bestscore) {
+    //         k = bestscore
+    //     };
+    // }
+    // return Object.keys(k)
+}
+
+console.log(getMaxValueKey(scores));
 console.log();
 
 
