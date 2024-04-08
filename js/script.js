@@ -147,7 +147,7 @@ let floorValue = 0;
  * @returns {number} The random number.
  */
 function getRandomValue(a) {
-    return Math.floor(Math.random(0) * (a + 1))
+    return Math.floor(Math.random() * (a + 1))
 }
 
 
@@ -157,7 +157,7 @@ console.log(getRandomValue(100));
 
 //Dé de JDR
 function rollRPGDice(a) {
-    return Math.floor(Math.random(0) * a + 1)
+    return Math.floor(Math.random() * a + 1)
 }
 console.log(rollRPGDice(100));
 
@@ -205,8 +205,8 @@ console.log("9/ Implémentez une fonction qui retourne une durée en heures et m
  */
 function convertTime(time) {
     let minute = Math.ceil(time % 60);
-    let hour = Math.floor(time/60);
-    return `${hour} heures et ${minute} minutes.` 
+    let hour = Math.floor(time / 60);
+    return `${hour} heures et ${minute} minutes.`
 }
 
 console.log(convertTime(121));
@@ -227,7 +227,7 @@ let numTable2 = [75, 95, 88, 2, 14, 12, 100, 58];
  */
 function getMinTableValue(array) {
     return Math.min(...array)
-    }
+}
 
 
 console.log(getMinTableValue((numTable)));
@@ -238,24 +238,18 @@ console.log(getMinTableValue((numTable2)));
 
 console.log("11/ Implémentez une fonction qui retourne la clé d'un objet pour la valeur maximale .");
 
-const scores = 
-    {
-        Nicolas: 629,
-        Samir: 857,
-        Tom: 483,
-        Loanne: 567
-    }
-;
+const scores =
+{
+    Nicolas: 629,
+    Samir: 857,
+    Tom: 483,
+    Loanne: 567
+}
+    ;
 
 let bestscore;
 
 function getKeyForMaxValue(object) {
-    // for (const v in object) {
-    //     if (bestscore === undefined || Object.values(k) > bestscore) {
-    //         k = bestscore
-    //     };
-    // }
-    // return Object.keys(k)
 
 }
 
@@ -267,13 +261,31 @@ console.log();
 
 console.log("12/ Implémentez une fonction qui retourne une valeur aléatoire dans un tableau.");
 
-console.log();
-console.log();
+/**
+ * Get a random value from an array using its indexes.
+ * @param {array} array The array you want a random value from.
+ * @returns {number} The random value.
+ */
+function getRandomValueArray(array) {
+    return array[Math.floor(Math.random() * (array.length))]
+}
+
+// function getRandomValueArray(array){
+// a = array.length;
+// return getRandomValue(a)
+// }
+
+console.log(getRandomValueArray(numTable));
+console.log(getRandomValueArray(numTable2));
 
 
 /* ------------------------------------------------------*/
 
 console.log("13/ Implémentez une fonction qui retourne le nombre de mots dans un texte.");
+
+function name(params) {
+    
+}
 
 console.log();
 console.log();
