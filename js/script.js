@@ -238,8 +238,6 @@ console.log(getMinTableValue((numTable2)));
 
 console.log("11/ Implémentez une fonction qui retourne la clé d'un objet pour la valeur maximale .");
 
-console.log("11/ Implémentez une fonction qui retourne la clé d'un objet pour la valeur maximale .");
-
 /**
  * Get object key with highest value
  * @param {object} object 
